@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 Oct, 2010 12:55:11 PM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="org.np.stoman.persistence.Vendors" table="vendors" catalog="stoman">
+        <id name="vendorId" type="int" unsaved-value="null">
+            <column name="vendor_id" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="addresses" class="org.np.stoman.persistence.Addresses" fetch="select">
+            <column name="address_id" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

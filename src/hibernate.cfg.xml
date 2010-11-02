@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="SFStoman">
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">admin</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/stoman</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        
+        <mapping resource="org/np/stoman/persistence/Addresses.hbm.xml"/>
+        <mapping resource="org/np/stoman/persistence/Materials.hbm.xml"/>
+        <mapping resource="org/np/stoman/persistence/PurchaseMaterials.hbm.xml"/>
+        <mapping resource="org/np/stoman/persistence/PurchaseOrderMonitors.hbm.xml"/>
+        <mapping resource="org/np/stoman/persistence/PurchaseOrders.hbm.xml"/>
+        <mapping resource="org/np/stoman/persistence/RankArchives.hbm.xml"/>
+        <mapping resource="org/np/stoman/persistence/Ranks.hbm.xml"/>
+        <mapping resource="org/np/stoman/persistence/Users.hbm.xml"/>
+        <mapping resource="org/np/stoman/persistence/VendorMaterialArchives.hbm.xml"/>
+        <mapping resource="org/np/stoman/persistence/VendorMaterials.hbm.xml"/>
+        <mapping resource="org/np/stoman/persistence/Vendors.hbm.xml"/>
+   </session-factory>
+</hibernate-configuration>

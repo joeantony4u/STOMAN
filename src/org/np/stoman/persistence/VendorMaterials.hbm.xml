@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 Oct, 2010 12:55:11 PM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="org.np.stoman.persistence.VendorMaterials" table="vendor_materials" catalog="stoman">
+        <id name="vendorMaterialId" type="int">
+            <column name="vendor_material_id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="vendors" class="org.np.stoman.persistence.Vendors" fetch="select">
+            <column name="vendor_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="materials" class="org.np.stoman.persistence.Materials" fetch="select">
+            <column name="material_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="users" class="org.np.stoman.persistence.Users" fetch="select">
+            <column name="modified_by" not-null="true" />
+        </many-to-one>
+        <property name="priceStartDate" type="timestamp">
+            <column name="price_start_date" length="19" not-null="true" />
+        </property>
+        <property name="modifiedDate" type="timestamp">
+            <column name="modified_date" length="19" not-null="true" />
+        </property>
+        <property name="maxQtyPerOrder" type="java.lang.Integer">
+            <column name="max_qty_per_order" />
+        </property>
+    </class>
+</hibernate-mapping>

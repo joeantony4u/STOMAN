@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 Oct, 2010 12:55:11 PM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="org.np.stoman.persistence.PurchaseOrderMonitors" table="purchase_order_monitors" catalog="stoman">
+        <id name="purchaseOrderMonitorId" type="int">
+            <column name="purchase_order_monitor_id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="purchaseMaterials" class="org.np.stoman.persistence.PurchaseMaterials" fetch="select">
+            <column name="purchase_material_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="users" class="org.np.stoman.persistence.Users" fetch="select">
+            <column name="modified_by" not-null="true" />
+        </many-to-one>
+        <property name="receivedDate" type="timestamp">
+            <column name="received_date" length="19" not-null="true" />
+        </property>
+        <property name="receivedQuantity" type="int">
+            <column name="received_quantity" not-null="true" />
+        </property>
+        <property name="modifiedDate" type="timestamp">
+            <column name="modified_date" length="19" not-null="true" />
+        </property>
+        <property name="tranportationCharge" type="big_decimal">
+            <column name="tranportation_charge" precision="5" />
+        </property>
+    </class>
+</hibernate-mapping>

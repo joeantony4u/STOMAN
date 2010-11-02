@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 Oct, 2010 12:55:11 PM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="org.np.stoman.persistence.RankArchives" table="rank_archives" catalog="stoman">
+        <id name="rankArchiveId" type="int">
+            <column name="rank_archive_id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="vendors" class="org.np.stoman.persistence.Vendors" fetch="select">
+            <column name="vendor_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="users" class="org.np.stoman.persistence.Users" fetch="select">
+            <column name="modified_by" not-null="true" />
+        </many-to-one>
+        <property name="rank" type="int">
+            <column name="rank" not-null="true" />
+        </property>
+        <property name="expiredDate" type="string">
+            <column name="expired_date" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

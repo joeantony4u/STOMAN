@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 Oct, 2010 12:55:11 PM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="org.np.stoman.persistence.PurchaseOrders" table="purchase_orders" catalog="stoman">
+        <id name="purchaseOrderId" type="int">
+            <column name="purchase_order_id" />
+            <generator class="native" />
+        </id>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="5" />
+        </property>
+        <property name="discount" type="big_decimal">
+            <column name="discount" precision="5" />
+        </property>
+        <set name="purchaseMaterialses" inverse="true">
+            <key>
+                <column name="purchase_order_id" not-null="true" />
+            </key>
+            <one-to-many class="org.np.stoman.persistence.PurchaseMaterials" />
+        </set>
+    </class>
+</hibernate-mapping>

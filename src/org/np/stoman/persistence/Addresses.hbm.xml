@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 Oct, 2010 12:55:11 PM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="org.np.stoman.persistence.Addresses" table="addresses" catalog="stoman">
+        <id name="addressId" type="int">
+            <column name="address_id" />
+            <generator class="native" />
+        </id>
+        <property name="streetName1" type="string">
+            <column name="street_name_1" length="45" not-null="true" />
+        </property>
+        <property name="streetName2" type="string">
+            <column name="street_name_2" length="45" />
+        </property>
+        <property name="area" type="string">
+            <column name="area" length="45" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="45" />
+        </property>
+        <property name="zip" type="java.lang.Integer">
+            <column name="zip" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="45" />
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

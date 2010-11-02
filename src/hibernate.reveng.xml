@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="stoman" match-name="addresses"/>
+  <table-filter match-catalog="stoman" match-name="materials"/>
+  <table-filter match-catalog="stoman" match-name="purchase_materials"/>
+  <table-filter match-catalog="stoman" match-name="purchase_order_monitors"/>
+  <table-filter match-catalog="stoman" match-name="purchase_orders"/>
+  <table-filter match-catalog="stoman" match-name="rank_archives"/>
+  <table-filter match-catalog="stoman" match-name="ranks"/>
+  <table-filter match-catalog="stoman" match-name="users"/>
+  <table-filter match-catalog="stoman" match-name="vendor_material_archives"/>
+  <table-filter match-catalog="stoman" match-name="vendor_materials"/>
+  <table-filter match-catalog="stoman" match-name="vendors"/>
+</hibernate-reverse-engineering>

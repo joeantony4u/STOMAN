@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 Oct, 2010 12:55:11 PM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="org.np.stoman.persistence.PurchaseMaterials" table="purchase_materials" catalog="stoman">
+        <id name="purchaseMaterialId" type="int">
+            <column name="purchase_material_id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="purchaseOrders" class="org.np.stoman.persistence.PurchaseOrders" fetch="select">
+            <column name="purchase_order_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="vendorMaterials" class="org.np.stoman.persistence.VendorMaterials" fetch="select">
+            <column name="vendor_material_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="users" class="org.np.stoman.persistence.Users" fetch="select">
+            <column name="modified_by" />
+        </many-to-one>
+        <property name="date" type="timestamp">
+            <column name="date" length="19" not-null="true" />
+        </property>
+        <property name="orderedQuantity" type="int">
+            <column name="ordered_quantity" not-null="true" />
+        </property>
+        <property name="receivedQuantity" type="int">
+            <column name="received_quantity" not-null="true" />
+        </property>
+        <property name="createdBy" type="int">
+            <column name="created_by" not-null="true" />
+        </property>
+        <property name="modifiedDate" type="java.lang.Integer">
+            <column name="modified_date" />
+        </property>
+        <property name="dueDate" type="timestamp">
+            <column name="due_date" length="19" />
+        </property>
+        <property name="delieveredDate" type="timestamp">
+            <column name="delievered_date" length="19" />
+        </property>
+        <property name="cancelledDate" type="timestamp">
+            <column name="cancelled_date" length="19" />
+        </property>
+        <property name="transportatonCharge" type="big_decimal">
+            <column name="transportaton_charge" precision="5" />
+        </property>
+    </class>
+</hibernate-mapping>
